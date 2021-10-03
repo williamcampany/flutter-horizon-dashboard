@@ -1,0 +1,6 @@
+{
+  "appTitle": "horizon_dash",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
