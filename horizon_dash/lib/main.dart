@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:horizon_client/horizon_client.dart';
+import 'package:horizon_dash/src/views/simple_dashboard.dart';
 
 import 'src/app.dart';
 import 'src/settings/settings_controller.dart';
@@ -16,5 +18,7 @@ void main() async {
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+  final HorizonClient client = HorizonClient(2050);
+  await client.listen();
+  runApp(MyApp(settingsController: settingsController, client: client));
 }
